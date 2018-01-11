@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Bert Freudenberg">
+<meta name="keywords" content="pokemon go">
+<meta name="description" content="Arena Progress Tracker by Bert Freudenberg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="msapplication-TileImage" content="icon.png">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" type="text/css" href="gymtracker.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+    crossorigin=""></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"
+    integrity="sha384-btJhAWztz7ttA6ibFC5ppM39nkCPK6CWzRVmsaLcDn37mA3x1TzF1DbFwa6tJpTN"
+    crossorigin=""></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css"
+    integrity="sha384-t17w2haSDwLp3KSAOHF7+VI9q2maRMLDhnIyU/JasjeWyxcN3YOcrD7T95CiJSWE"
+    crossorigin="">
+<script src="https://unpkg.com/s2-geometry@1.2.9/src/s2geometry.js"
+    integrity="sha384-WGDofm6Km+bZIxd/uBU2QJlwIMxX/9H5H7G9glfYtcAAR8vrm0wbzvtpIG54XhOZ"
+    crossorigin=""></script>
+<title>Berts Arena Tracker</title>
+</head>
+
+<body>
+    <form id="undo">
+        Die Medaillen wurden ersetzt.
+        <br>
+        <button type="button" onclick="undoRestore()">Rückgängig machen</button>
+        <button type="button" onclick="reload()">Neue Medaillen behalten</button>
+    </form>
+
+    <h1>Arena Tracker</h1>
+
+    <form id="restore">
+        <i>Teile diese Seite, um die Medaillen in einen anderen Browser zu übertragen.</i>
+        <br><br>
+        Willst du die in diesem Browser gespeicherten Medaillen ersetzen?
+        <br>
+        <button type="button" onclick="doRestore()">Ja, Medaillen ersetzen</button>
+        <button type="button" onclick="reload()">Nein, abbrechen</button>
+    </form>
+
+    <div id="jump"></div>
+
+    <div id="sums" class="big">
+        <img src="gym3.png" width="36" onclick="showByLevel(3)"><span id="sum3">0</span> &nbsp;
+        <img src="gym2.png" width="36" onclick="showByLevel(2)"><span id="sum2">0</span> &nbsp;
+        <img src="gym1.png" width="36" onclick="showByLevel(1)"><span id="sum1">0</span> &nbsp;
+        <img src="gym0.png" width="36" onclick="showByLevel(0)"><span id="sum0">0</span>
+        / <span id="sum">0</span>
+    </div>
+
+    <div id="content">
+        <div class="small">Klicke die Medaillen in der Liste an, um sie auf Bronze/Silber/Gold zu stellen. 
+            <span style="white-space:nowrap">Viel Spaß! Bert</span></div>
+        <button type="button" onclick="showByName()">Namen</button>
+        <button type="button" onclick="showByDistrict()">Stadtteile</button>
+        <button type="button" onclick="showByLevel()">Medaillen</button>
+        <button type="button" onclick="showByExraid()">EX</button>
+        <button type="button" onclick="showAsMap()">Karte</button>
+        <div id="map"></div>
+        <div id="list"></div>
+        <div id="share">
+            Die Medaillen sind nur in diesem Browser gespeichert. Um sie zu übertragen,
+            schicke den folgenden Link an ein anderes Gerät:<br>
+            <a id="share-url">Medaillen</a>
+        </div>
+    </div>
+    <script src="gymdata.js"></script>
+    <script src="gymtracker.js"></script>
+</body>
+</html>
