@@ -169,8 +169,7 @@ function gymData() {
 	{name: "Fischhändler und Marktfrau", district: "Altona-Altstadt", address: "St. Pauli Fischmarkt 2A", location: [53.545818,9.952874]},
 	{name: "Fischauktionshalle", district: "Große Elbstraße", address: "9 Fischauktionshalle", location: [53.544895,9.951612]},
 	{name: "Urbane Kulturlandschaft Fischmarkt", district: "Altona", address: "Altona-Altstadt Große Elbstraße", location: [53.54488,9.952881]},
-	{name: "U-434 Museum", district: "Altona", address: "Altona-Altstadt Fischmarkt", location: [53.545162,9.954558], park: "way/137423991"},
-	]};
+	{name: "U-434 Museum", district: "Altona", address: "Altona-Altstadt Fischmarkt", location: [53.545162,9.954558], park: "way/137423991"}]};
 	{name: "Kriegerdenkmal", district: "Bahrenfeld", address: "Lutherhöhe Lutherkirche", location: [53.571842,9.904308]},
 	{name: "Futterhaus im Wald", district: "Bahrenfeld", address: "Lutherhöhe", location: [53.571674,9.905908]},
 	{name: "Schiff vorm Lutherhaus", district: "Bahrenfeld", address: "Wittenbergstraße 50", location: [53.570663,9.904589]},
