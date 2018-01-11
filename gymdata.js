@@ -66,7 +66,7 @@ function gymData() {
 	{name: "Skulptur Kieler Straße", district: "Eimsbüttel", address: "Eimsbütteler Marktplatz Tor", location: [53.57222,9.94237], park: "way/145693846"},
 	{name: "Gedenkstein Schöne Marianne", district: "Eimsbüttel", address: "Eimsbütteler Marktplatz Schöne Marianne", location: [53.572151,9.943178], park: "way/145693846"},
 	{name: "Brunnen Eimsbusch", district: "Eimsbüttel", address: "Glücksburger Platz", location: [53.569592,9.949469]},
-	{name: "Straßenbahnring", district: "Straßenbahnring", address: "18 RTL Nord", location: [53.581188,9.9755]},
+	{name: "Straßenbahnring", district: "Hoheluft-Ost", address: "Straßenbahnring 18", location: [53.581188,9.9755]},
 	{name: "Katzenhaus", district: "Harvestehude", address: "Oberstraße 2", location: [53.577435,9.977812]},
 	{name: "Schreitende", district: "Eimsbüttel", address: "Harvestehude Oberstraße", location: [53.57822,9.983128], park: "way/20362343"},
 	{name: "Katholische Kirche", district: "Harvestehude", address: "Oberstraße 67", location: [53.577763,9.985447]},
