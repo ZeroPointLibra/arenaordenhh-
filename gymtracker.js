@@ -101,7 +101,7 @@ function makeMap() {
     const mapboxToken = 'pk.eyJ1IjoiemVyb3BvaW50bGlicmEiLCJhIjoiY2pjYWlxd2VnMDhoajMzcDZtYmgxeGloeCJ9.tjcCHRX_1aOLaeKG_9ZXBQ';
     // For testing only, you could use the OSM tile server instead:
     // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    L.tileLayer(`https://api.tiles.mapbox.com/v1/mapbox.pirates/{z}/{x}/{y}.png?access_token=${mapboxToken}`, {
+    L.tileLayer(`https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${mapboxToken}`, {
         attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> | © <a href="http://mapbox.com">Mapbox</a>',
         minZoom: 12,
         maxZoom: 17,
