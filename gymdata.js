@@ -183,4 +183,5 @@ function gymData() {
 	{name: "Friedhofskapelle Diebsteich", district: "Bahrenfeld", address: "Am Diebsteich", location: [53.568859,9.93273]},
 	{name: "Bahnhof Diebsteich", district: "Altona-Nord", address: "Diebsteichtunnel", location: [53.568642,9.934208]},
 	{name: "CALPESA Spanien für Jedermann", district: "Bahrenfeld", address: "Leunastraße", location: [53.567318,9.928913]},
+    ]};
 }
