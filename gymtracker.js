@@ -61,7 +61,7 @@ function makeList() {
         gym.div.innerHTML = `
             <img src="gym${gym.levelEx}.png" class="badge" width="36" height="48">
             <div><b>${gym.name}</b>
-                ${typeof gym.park == 'string' ? '(<a href="http://www.openstreetmap.org/' + gym.park + '">EX</a>)' : ''}<br>
+                ${typeof gym.park == 'string' ? '(<a href="http://www.openstreetmap.org/' + gym.park + '">Ex-Raid möglich</a>)' : ''}<br>
                 ${gym.district ? gym.district+',' : ''}
                 <a href="https://www.google.com/maps/?q=${gym.location}">${gym.address || 'map'}</a>
             </div>${gym.exraid ? '<img src="exraid.png" class="exbadge">' : ''}`;
