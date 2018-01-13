@@ -129,7 +129,7 @@ function makeMap() {
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
 
 // add gym filter
-var filterGroup = document.getElementById('filter-group');
+    var filterGroup = document.getElementById('filter-group');
     gyms.features.forEach(function(feature) {
         var symbol = feature.properties['icons'];
         var layerID = 'poi-' + symbol;
