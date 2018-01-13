@@ -627,7 +627,6 @@ function gymData() {
 	{name: "Ex Libris Owl", district: "Wandsbek", address: "Holzmühlenstraße 84", location: [53.583447,10.079178]},
 	{name: "Extensives Weiden", district: "Quickborn", address: "Himmelmoorweg", location: [53.748096,9.86822]},
 	{name: "Eye", district: "Lokstedt", address: "Julius-Vosseler-Straße 193", location: [53.584812,9.950314]},
-
 	{name: "FF Osdorf Hamburg", district: "Osdorf", address: "Blomkamp 11", location: [53.57637,9.849304]},
 	{name: "Fabrik", district: "Ottensen", address: "Bahrenfelder Straße 242", location: [53.556435,9.928849]},
 	{name: "Face Statue Bramfelder See", district: "Bramfeld", address: "Fritz-Reuter-Straße 44", location: [53.62096,10.078703], park: "way/49209867"},
