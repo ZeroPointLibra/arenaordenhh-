@@ -489,7 +489,7 @@ function gymData() {
 	{name: "Leuchtturm Moorburg", district: "Moorburg", address: "Drewer Hauptdeich", location: [53.49646,9.939884]},
 	{name: "Leuchtturm Rissen", district: "Rissen", address: "Otto-Schokoll-Höhenweg Wittenbergen Unterfeuer", location: [53.564056,9.751493]},
 	{name: "Libelle", district: "Barsbüttel", address: "Dorfring 4a", location: [53.571217,10.242253]},
-	{name: "Libelle", district: "Winterhude, address: "Jahnring", location: [53.599396,10.026697], park: "way/23734712"},
+	{name: "Libelle", district: "Winterhude", address: "Jahnring", location: [53.599396,10.026697], park: "way/23734712"},
 	{name: "Liborius Kirche Bremervörde", district: "Bremervörde", address: "Neue Straße St. Liborius-Kirche", location: [53.486702,9.146589]},
 	{name: "Licht Von Irithien Spielstele", district: "Norderstedt", address: "Waldloop Waldspielplatz", location: [53.715542,10.018483], park: "way/154452692"},
 	{name: "Lichtscheues Gesindel - die Knoblauchkröte ( Naturerlebnisstation A 19)", district: "Tangstedt", address: "Waldstraße Lichtscheues Gesindel", location: [53.720608,10.050524]},
