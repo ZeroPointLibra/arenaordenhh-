@@ -24,9 +24,9 @@ function gymData() {
 	return {
 	city: "DE-MD", // country-city (used in localStorage key to allow tracking multiple cities)
 	gyms: [
-	{name: "Riesenrad Am Ufer", district: "HafenCity", address: "Hübenerstraße", location: [53.539989,9.995039], park: "way/238983377", exraid: true},
-	{name: "Riesenrad Hamburger Dom", district: "Rothenburgsort", address: "Billhorner Brückenstraße Billhorner Röhrendamm", location: [53.538033,10.031129]},
-	{name: "Riesenraupe", district: "Osdorf", address: "Lesebergweg 23", location: [53.574425,9.840363]},
-	{name: "Riesenstuhl Am Riesentisch", district: "Osdorf", address: "Achtern Born Außenbereich KL!CK Kindermuseum", location: [53.587708,9.847419]},
+	{name: "Riesiges Insektenhotel", district: "Altona-Altstadt", address: "Max-Brauer-Allee 138", location: [53.55724,9.947732], park: "way/4275521"},
+	{name: "Ringelpietz-Mural Behringstraße/Griegstraße", district: "Ottensen", address: "Griegstraße 53", location: [53.554211,9.909524]},
+	{name: "Ringwallanlage Wikingerdorf bei Jork", district: "Landkreis Stade", address: "Jork", location: [53.551563,9.668313]},
+	{name: "Ritter", district: "Sülldorf", address: "Sülldorfer Landstraße 246", location: [53.580696,9.789861]},
 	]};
 }
