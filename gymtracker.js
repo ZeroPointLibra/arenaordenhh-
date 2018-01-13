@@ -76,6 +76,7 @@ function makeList() {
 }
 
 // leaflet.js map
+var filterGroup = document.getElementById('filter-group');
 function makeMap() {
 
     // center map on higher-level gyms
@@ -126,6 +127,9 @@ function makeMap() {
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
+
+// add gym filter
+        
     }
 
     // Show S2 level 12 cells
