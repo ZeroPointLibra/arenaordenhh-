@@ -24,11 +24,9 @@ function gymData() {
 	return {
 	city: "DE-MD", // country-city (used in localStorage key to allow tracking multiple cities)
 	gyms: [
-	{name: "Riesen Skateboard", district: "Bahrenfeld", address: "HERA Skateplatz", location: [53.589993,9.887629], park: "way/20779979"},
-	{name: "Riesen Weinflasche Oldland", district: "Landkreis Stade", address: "Osterjork Obsthof Lefers", location: [53.526012,9.706507], park: "way/71284754"},
-	{name: "Riesen am AEZ", district: "Poppenbüttel", address: "Heegbarg 31", location: [53.654556,10.092258]},
-	{name: "Riesenbaby", district: "Langenhorn", address: "Dortmunder Straße 12a", location: [53.670761,9.995081]},
-	{name: "Riesenboje am Kanuverleih", district: "Landkreis Stade", address: "Salztorswall 3", location: [53.600903,9.479397]},
-	{name: "Riesendämpfer", district: "Schenefeld", address: "Hasselbinnen 24", location: [53.593262,9.830015]},
+	{name: "Riesenrad Am Ufer", district: "HafenCity", address: "Hübenerstraße", location: [53.539989,9.995039], park: "way/238983377", exraid: true},
+	{name: "Riesenrad Hamburger Dom", district: "Rothenburgsort", address: "Billhorner Brückenstraße Billhorner Röhrendamm", location: [53.538033,10.031129]},
+	{name: "Riesenraupe", district: "Osdorf", address: "Lesebergweg 23", location: [53.574425,9.840363]},
+	{name: "Riesenstuhl Am Riesentisch", district: "Osdorf", address: "Achtern Born Außenbereich KL!CK Kindermuseum", location: [53.587708,9.847419]},
 	]};
 }
