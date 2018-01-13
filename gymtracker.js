@@ -49,6 +49,7 @@ const storageKeyOld = city + ':gym-levels-old';
         case '#district': showByDistrict(); break; 
         case '#level': showByLevel(); break; 
         case '#exraid': showByExraid(); break; 
+        case '#act_exraid': showByActExraid(); break; 
         default: showByName();
     }
 })();
@@ -223,6 +224,11 @@ function showByLevel(level) {
 function showByExraid() {
     showList(compareDistricts, 0, gym => gym.exraid || gym.park);
     history.replaceState(null, "By Exraid", "#exraid");
+}
+
+function showByActExraid() {
+    showList(compareDistricts, 0, gym => gym.act_exraid || gym.park || gym.true);
+    history.replaceState(null, "By actual Exraid", "#act_exraid");
 }
 
 function showAsMap() {
