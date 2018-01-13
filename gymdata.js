@@ -431,5 +431,13 @@ function gymData() {
 	{name: "Denkmal St. Johannis", district: "Altona-Altstadt", address: "Max-Brauer-Allee Sternbrücke", location: [53.560204,9.953435]},
 	{name: "Denkmal Synagoge Oberstraße", district: "Harvestehude", address: "Oberstraße 120", location: [53.577618,9.991137]},
 	{name: "Denkmal Weg Am Denkmal", district: "Harksheide", address: "Weg am Denkmal Gefallene des 1. Weltkriegs", location: [53.716755,10.001925]},
+	{name: "Denkmal an Bomben", district: "Bergedorf", address: "August-Bebel-Straße Krokusläufer", location: [53.48336,10.237743]},
+	{name: "Denkmal mit Kompass", district: "Bramfeld", address: "Berner Chaussee Kapelle", location: [53.617538,10.087299]},
+	{name: "Denkmal und Fassade : Am Evang", district: "Volksdorf", address: "Wiesenkamp Elternzentrum", location: [53.641376,10.150611]},
+	{name: "Denkmal vermisster Wentorfer", district: "Wentorf bei Hamburg", address: "Wischhoff 2", location: [53.49382,10.252529]},
+	{name: "Denkmal", district: "Iserbrook", address: "Lütt-Iserbrook 39", location: [53.580414,9.816981]},
+	{name: "Denkmalgeschützte Laterne Bülowstraße", district: "Ottensen", address: "Bülowstraße 9", location: [53.552158,9.914674]},
+	{name: "Denksteinweg Denkstein", district: "Jenfeld", address: "Denksteinweg 22", location: [53.572773,10.13199]},
+	{name: "Der Adler", district: "Norderstedt", address: "Buschweg 20", location: [53.693058,9.979874]},
 	]};
 }
