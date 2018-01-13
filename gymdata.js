@@ -439,5 +439,10 @@ function gymData() {
 	{name: "Denkmalgeschützte Laterne Bülowstraße", district: "Ottensen", address: "Bülowstraße 9", location: [53.552158,9.914674]},
 	{name: "Denksteinweg Denkstein", district: "Jenfeld", address: "Denksteinweg 22", location: [53.572773,10.13199]},
 	{name: "Der Adler", district: "Norderstedt", address: "Buschweg 20", location: [53.693058,9.979874]},
+	{name: "Der Alte Kirchhof Von 1309", district: "Moorburg", address: "Moorburger Kirchdeich 50", location: [53.484421,9.932604], park: "way/158232527"},
+	{name: "Der Anker", district: "Lurup", address: "Karl-Heinz-Krahn-Weg Holzsäule", location: [53.589966,9.860195]},
+	{name: "Der Brunnen beim Marlin", district: "Langenhorn", address: "Tarpen 40", location: [53.666092,9.994456]},
+	{name: "Der Bullenritt Heukoppel", district: "Bramfeld", address: "Heukoppel", location: [53.611168,10.080535]},
+	{name: "Der Bär", district: "Sülldorf", address: "Feldweg 61", location: [53.584354,9.788037], park: "way/22974275"},
 	]};
 }
