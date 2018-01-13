@@ -133,6 +133,9 @@ function makeMap() {
     gyms.features.forEach(function(feature) {
         var symbol = feature.properties['icons'];
         var layerID = 'poi-' + symbol;
+     
+    map.addImage('filter_icon', {width: 36, height: 48, data: icons});
+
 
         // Add a layer for this symbol type if it hasn't been added already.
         if (!map.getLayer(layerID)) {
@@ -141,10 +144,10 @@ function makeMap() {
                 "type": "symbol",
                 "source": "gyms",
                 "layout": {
-                    "icon-image": symbol + "-15",
+                    "icon-image": "filter_icon",
                     "icon-allow-overlap": true
                 },
-                "filter": ["==", "icons", symbol]
+                "filter": ["==", "filter_icon", symbol]
             });
 
 
