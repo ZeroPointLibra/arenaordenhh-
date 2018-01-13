@@ -444,5 +444,7 @@ function gymData() {
 	{name: "Der Brunnen beim Marlin", district: "Langenhorn", address: "Tarpen 40", location: [53.666092,9.994456]},
 	{name: "Der Bullenritt Heukoppel", district: "Bramfeld", address: "Heukoppel", location: [53.611168,10.080535]},
 	{name: "Der Bär", district: "Sülldorf", address: "Feldweg 61", location: [53.584354,9.788037], park: "way/22974275"},
+	{name: "Der Frosch der zum Himmel schaut", district: "Quickborn", address: "Renzel Himmelmoorstraße", location: [53.74107,9.867975]},
+	{name: "Der Geist", district: "Eimsbüttel", address: "Heußweg 71", location: [53.578335,9.953693]},
 	]};
 }
