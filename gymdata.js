@@ -62,7 +62,7 @@ function gymData() {
 	{name: "Riesen Libelle", district: "Osdorf", address: "Achtern Born Libellenplatz", location: [53.585979,9.84888]},
 	{name: "Riesen Plattfisch", district: "Langenhorn", address: "Essener Straße 90", location: [53.67382,9.995764]},
 	{name: "Riesen Rasenmäher", district: "Lurup", address: "Hanfstieg Giebel Motorgeräte", location: [53.594738,9.852254]},
-	{name: "Riesen Skateboard", district: "Bahrenfeld", address: "HERA Skateplatz", location: [53.589993,9.887629] park: "way/20779979"},
+	{name: "Riesen Skateboard", district: "Bahrenfeld", address: "HERA Skateplatz", location: [53.589993,9.887629], park: "way/20779979"},
 	{name: "Riesen Weinflasche Oldland", district: "Landkreis Stade", address: "Osterjork Obsthof Lefers", location: [53.526012,9.706507], park: "way/71284754"},
 	{name: "Riesen am AEZ", district: "Poppenbüttel", address: "Heegbarg 31", location: [53.654556,10.092258]},
 	{name: "Riesenbaby", district: "Langenhorn", address: "Dortmunder Straße 12a", location: [53.670761,9.995081]},
