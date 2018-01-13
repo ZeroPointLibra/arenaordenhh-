@@ -446,7 +446,7 @@ function gymData() {
 	{name: "Der Bär", district: "Sülldorf", address: "Feldweg 61", location: [53.584354,9.788037], park: "way/22974275"},
 	{name: "Der Frosch der zum Himmel schaut", district: "Quickborn", address: "Renzel Himmelmoorstraße", location: [53.74107,9.867975]},
 	{name: "Der Geist", district: "Eimsbüttel", address: "Heußweg 71", location: [53.578335,9.953693]},
-	{name: "Der Gelbe Hund", district: "Schenefeld", "address: "Friedrich-Ebert-Allee 21", location: [53.608482,9.842773]},
+	{name: "Der Gelbe Hund", district: "Schenefeld", address: "Friedrich-Ebert-Allee 21", location: [53.608482,9.842773]},
 	{name: "Der Grasfrosch", district: "Norderstedt", address: "Am Hallenbad", location: [53.688114,10.002627]},
 	{name: "Der Große Glinder Findling", district: "Glinde", address: "Kupfermühlenweg Großer Glinder Findling", location: [53.549999,10.208708]},
 	{name: "Der Jersbeker Park", district: "Bargteheide", address: "Oberteicher Weg", location: [53.746029,10.225354], park: "way/29579423"},
