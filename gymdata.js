@@ -374,11 +374,6 @@ function gymData() {
 	{name: "Cow Bar", district: "Wellingsbüttel", address: "Rolfinckstraße 1", location: [53.6404,10.083355]},
 	{name: "Cremonbrücke", district: "Hamburg-Altstadt", address: "Holzbrücke 2", location: [53.54715,9.988864]},
 	{name: "Cross Point", district: "Schwarzenbek", address: "Möllner Straße DDR-Grenzsäule", location: [53.505363,10.478959], park: "way/116977779"},
-
-
-
-
-
 	{name: "DB Stellingen", district: "Stellingen", address: "Försterweg", location: [53.586246,9.921734]},
 	{name: "DESY Eingang Luruper Chaussee", district: "Bahrenfeld", address: "HERA 12a", location: [53.57679,9.888182]},
 	{name: "DESY Main Entrance", district: "Bahrenfeld", address: "Notkestraße 66", location: [53.572224,9.880813]},
