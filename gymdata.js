@@ -513,7 +513,7 @@ function gymData() {
 	{name: "Draggenanker für Oberelbkähne", district: "Wilhelmsburg", address: "Mengestraße 20", location: [53.500454,9.995463]},
 	{name: "Drehscheibe", district: "Norderstedt", address: "Lütjenmoor", location: [53.683529,9.988529], park: "way/23806882"},
 	{name: "Drei Kobolde", district: "Rahlstedt", address: "Polziner Straße 15", location: [53.620213,10.147382]},
-	{name: "Drei Vogelsäulen für Borgfelde", district: "Borgfelde", address: "Klaus-Groth-Straße 92", location: [53.555241,10.036232, park: "way/67808696"]},
+	{name: "Drei Vogelsäulen für Borgfelde", district: "Borgfelde", address: "Klaus-Groth-Straße 92", location: [53.555241,10.036232], park: "way/67808696"},
 	{name: "Dreieckstänzer. Statue in der", district: "Harburg", address: "Harburg Arcaden Begegnung", location: [53.460365,9.980596]},
 	{name: "Drosteiplatz", district: "Pinneberg", address: "Dingstätte Drostei", location: [53.661026,9.796674], park: "way/22830406"},
 	{name: "Druckluft Kompressor Evers", district: "Ahrensburg", address: "Kurt-Fischer-Straße 36", location: [53.6856,10.261635]},
