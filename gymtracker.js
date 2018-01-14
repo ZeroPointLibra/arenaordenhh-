@@ -109,8 +109,8 @@ function makeMap() {
     }).addTo(map);
 
     // add gym markers
-    // level 0-3 are regular gyms, 4-7 exraid gyms
-    const icons = [0,1,2,3,4,5,6,7].map(level => L.icon({
+    // level 0-4 are regular gyms, 5-9 exraid gyms
+    const icons = [0,1,2,3,4,5,6,7,8,9].map(level => L.icon({
         iconUrl: `gym${level}.png`,
         iconSize: [36, 48],
         iconAnchor: [18, 42],
@@ -322,7 +322,7 @@ function setLevel(i, level) {
 }
 function getLevel(i) { return getLevelsString()[i] & 3; }
 function incLevel(i) {
-    const level = (getLevel(i) + 1) % 4;
+    const level = (getLevel(i) + 1) % 5;
     setLevel(i, level);
     updateSums();
     return level;
@@ -339,7 +339,7 @@ function getGyms() {
         gyms: gyms.map((gym, index) => Object.assign({
                 id: index,          // gym's index in storage string
                 get level() { return getLevel(index) },
-                get levelEx() { return getLevel(index) + ((gym.exraid || gym.park) ? 4 : 0)},
+                get levelEx() { return getLevel(index) + ((gym.exraid || gym.park) ? 5 : 0)},
             }, gym))
             .filter(({deleted}) => !deleted),
     };
