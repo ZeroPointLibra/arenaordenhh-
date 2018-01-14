@@ -162,7 +162,7 @@ function makeMap_pot_Ex() {
     function weightedCenter(weights = [1, 4, 16, 64]) {
         let center = [0, 0],
             count = 0;
-        for (const (gym => gym.exraid || gym.park) of gyms) {
+        for (const gym of gyms; gym.exraid || gym.park) {
             const weight = weights[gym.level];
             center[0] += weight * gym.location[0];
             center[1] += weight * gym.location[1];
