@@ -308,7 +308,7 @@ function compareExraid(a, b) {
 
 //////////////// Badge Storage ////////////////
 
-function sanitize(s) { return String(s).replace(/[^0-4]/g, '0'); }
+function sanitize(s) { return String(s).replace(/[^0-5]/g, '0'); }
 function getLevelsString() { return sanitize(storage[storageKey] || storage['gym-levels'] || ''); }
 function setLevelsString(s) { storage[storageKey] = sanitize(s); updateShare(); }
 
