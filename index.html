@@ -25,7 +25,7 @@
 <script src="https://unpkg.com/s2-geometry@1.2.9/src/s2geometry.js"
     integrity="sha384-WGDofm6Km+bZIxd/uBU2QJlwIMxX/9H5H7G9glfYtcAAR8vrm0wbzvtpIG54XhOZ"
     crossorigin=""></script>
-<title>Gym Progress Tracker Hamburg</title>
+<title>Arena Progress Tracker Hamburg</title>
 </head>
 
 <body>
@@ -58,17 +58,14 @@
     </div>
 
     <div id="content">
-        <div id="intro">Finde potentielle Ex-Raid Arenen und halte den Status deiner Arenaorden fest!
-            Basiert auf der Arbeit von <a href="https://github.com/bertfreudenberg/gymprogress">Bert Freudenberg</a>, für Hamburg adaptiert von ZeroPointLibra.
-            <br>
-        </div>
-        <div class="small">Klicke die Medaillen in der Liste an, um sie auf Bronze/Silber/Gold zu stellen.
-            <span style="white-space:nowrap">Viel Spaß! Bert/Carina</span><br><br></div>
+        <div id="intro">Finde potentielle Ex-Raid Arenen und halte den Status deiner Arenaorden fest! Basiert auf der Arbeit von <a href="https://github.com/bertfreudenberg/gymprogress">Bert Freudenberg</a>, für Hamburg adaptiert von ZeroPointLibra.</div>
+        <div class="small">Klicke die Medaillen in der Liste an, um sie auf Bronze/Silber/Gold zu stellen. 
+            <span style="white-space:nowrap">Viel Spaß! Bert/Carina</span></div>
         <button type="button" onclick="showByName()">Namen</button>
         <button type="button" onclick="showByDistrict()">Stadtteile</button>
         <button type="button" onclick="showByLevel()">Medaillen</button>
         <button type="button" onclick="showByExraid()">Ex-Raid möglich</button>
-        <button type="button" onclick="showByActExraid()">Ex-Raids stattgefunden</button>
+        <button type="button" onclick="showByActExraid()">Ex-Raid stattgefunden</button>
         <button type="button" onclick="showAsMap()">Karte</button>
         <div id="map"></div>
         <div id="list"></div>
@@ -77,8 +74,23 @@
             schicke den folgenden Link an ein anderes Gerät:<br>
             <a id="share-url">Medaillen</a>
         </div>
-    </div>
+        <div id="contact">
+            <form method="post" action="http://www.example.com/cgi-bin/FormMail.pl" accept-charset="ISO-8859-1" onsubmit="var originalCharset = document.charset; document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};"> 
+            Name <br /> <input name="realname" /> <br /> 
+            E-Mail <br /> <input name="email" /> <br /> 
+            Nachricht <br /> 
+            <textarea cols="40" rows="10" name="Message"></textarea> <br /> 
+            <input type="submit" value="Senden" /> 
+            <input type="hidden" name="recipient" value="email@example.com" /> 
+            <input type="hidden" name="subject" value="Subject" /> 
+            <input type="hidden" name="redirect" value="http://www.example.com/danke.html" /> 
+            <input type="hidden" name="missing_fields_redirect" value="http://www.example.com/error.html" /> 
+            <input type="hidden" name="required" value="realname,email,Message" /> 
+            </form>
+        </div>
     <script src="gymdata.js"></script>
     <script src="gymtracker.js"></script>
+    </div>
 </body>
+   
 </html>
