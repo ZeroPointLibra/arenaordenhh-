@@ -323,7 +323,7 @@ function setLevel(i, level) {
 
 function getLevel(i) { return +getLevelsString()[i] ; }
 function incLevel(i) {
-    const level = ((getLevel(i) & 3) + 1) % 5;
+    const level = (getLevel(i) + 1) % 5;
     setLevel(i, level);
     updateSums();
     return level;
