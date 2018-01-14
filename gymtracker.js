@@ -156,86 +156,6 @@ function makeMap() {
     refreshMap = _ => L.Util.requestAnimFrame(map.invalidateSize, map, !1, map._container);
 }
 
-function makeMap_pot_Ex() {
-
-    // center map on higher-level gyms
-    function weightedCenter(weights = [1, 4, 16, 64]) {
-        let center = [0, 0],
-            count = 0;
-        for (const gym of gyms; gym => gym.exraid || gym.park) {
-            const weight = weights[gym.level];
-            center[0] += weight * gym.location[0];
-            center[1] += weight * gym.location[1];
-            count += weight;
-        }
-        return center.map(sum => sum / count);
-    }
-
-    const bounds = L.latLngBounds(gyms.map(gym => gym.location)).pad(0.3);
-    const map = L.map('map', {
-        center: weightedCenter(),
-        zoom: 14,
-        maxBounds: bounds,
-        fullscreenControl: true,
-    });
-    // Please get your own token at https://www.mapbox.com/signup/ It's free.
-    const mapboxToken = 'pk.eyJ1IjoiemVyb3BvaW50bGlicmEiLCJhIjoiY2pjYWlxd2VnMDhoajMzcDZtYmgxeGloeCJ9.tjcCHRX_1aOLaeKG_9ZXBQ';
-    // For testing only, you could use the OSM tile server instead:
-    // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    L.tileLayer(`https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${mapboxToken}`, {
-        attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> | © <a href="http://mapbox.com">Mapbox</a>',
-        minZoom: 12,
-        maxZoom: 17,
-    }).addTo(map);
-
-    // add gym markers
-    // level 0-3 are regular gyms, 4-7 exraid gyms
-    const icons = [0,1,2,3,4,5,6,7].map(level => L.icon({
-        iconUrl: `gym${level}.png`,
-        iconSize: [36, 48],
-        iconAnchor: [18, 42],
-        popupAnchor: [18, 6],
-        shadowUrl: 'gym_.png',
-        shadowSize: [36, 48],
-        shadowAnchor: [18, 35],
-    }));
-    for (const gym of gyms) {
-        const loc = L.latLng(gym.location);
-        const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
-        const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
-        marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
-        marker.addTo(map);
-        gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
-    }
-
-    // Show S2 level 12 cells
-    // we just make a grid around the center cell
-    // count is based on 2000 m average level 12 cell size ... better use a S2RegionCoverer
-    const count = L.CRS.Earth.distance(bounds.getSouthWest(), bounds.getNorthEast()) / 2000 |0;
-    const cell = S2.S2Cell.FromLatLng(bounds.getCenter(), 12);
-    const grid = [];
-    for (let j = -count; j < count; j++) {
-        const row = [];
-        for (let i = -count; i < count; i++) {
-            const st = S2.IJToST(cell.ij, cell.level, [i, j]);
-            const uv = S2.STToUV(st);
-            const xyz = S2.FaceUVToXYZ(cell.face, uv);
-            row.push(S2.XYZToLatLng(xyz));
-        }
-        grid.push(row);
-    }
-    // separate polylines per cell so they get culled
-    for (let x = 1; x < grid.length; x++) {
-        for (let y = 1; y < grid[0].length; y++) {
-            L.polyline([grid[x-1][y], grid[x-1][y-1], grid[x][y-1]],
-                {color: 'blue', opacity: 0.3, weight: 2}).addTo(map);
-        }
-    }
-
-    // used in showAsMap()
-    refreshMap = _ => L.Util.requestAnimFrame(map.invalidateSize, map, !1, map._container);
-}
-
 // add <a> jump targets and nav bar
 function makeJumpTable(nameFn = _ => _.name) {
     const targets = [];
@@ -302,11 +222,6 @@ function showByLevel(level) {
 }
 
 function showByExraid() {
-    const mapContent = $('map').children.length;
-    if (!mapContent) makeMap_pot_Ex();
-    show(['map']);
-    refreshMap();
-    history.replaceState(null, "Map", "#map");
     showList(compareDistricts, 0, gym => gym.exraid || gym.park);
     history.replaceState(null, "By Exraid", "#exraid");
 }
