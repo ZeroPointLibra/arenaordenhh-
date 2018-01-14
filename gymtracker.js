@@ -122,7 +122,7 @@ function makeMap() {
     for (const gym of gyms) {
         const loc = L.latLng(gym.location);
         const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
-        const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 5 + +n);
+        const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
@@ -185,7 +185,7 @@ function updateSums() {
     const sums = [0, 0, 0, 0, 0];
     for (const gym of gyms)
         sums[gym.level]++;
-    for (let i = 0; i < 5; i++)
+    for (let i = 0; i < 6; i++)
         $(`sum${i}`).innerText = sums[i];
     $(`sum`).innerText = gyms.length;
 }
