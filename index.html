@@ -75,18 +75,20 @@
             <a id="share-url">Medaillen</a>
         </div>
         <div id="contact">
-            <form method="post" action="http://www.example.com/cgi-bin/FormMail.pl" accept-charset="ISO-8859-1" onsubmit="var originalCharset = document.charset; document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};"> 
+            Deine Arena fehlt oder wurde von Niantic entfernt? Ex-Raid Status oder Aresse falsch? Sag mir was korrigiert werden muss. Bei fehlenden Arenen gib bitte eine Adresse oder im Idealfall die genauen Koordinaten mit an.
+            <form method="post" action="https://zeropointlibra.github.io/gymmap/cgi-bin/FormMail.pl" accept-charset="ISO-8859-1" onsubmit="var originalCharset = document.charset; document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};"> 
             Name <br /> <input name="realname" /> <br /> 
             E-Mail <br /> <input name="email" /> <br /> 
             Nachricht <br /> 
             <textarea cols="40" rows="10" name="Message"></textarea> <br /> 
             <input type="submit" value="Senden" /> 
-            <input type="hidden" name="recipient" value="email@example.com" /> 
+            <input type="hidden" name="recipient" value="cornflakegirl@live.de" /> 
             <input type="hidden" name="subject" value="Subject" /> 
-            <input type="hidden" name="redirect" value="http://www.example.com/danke.html" /> 
-            <input type="hidden" name="missing_fields_redirect" value="http://www.example.com/error.html" /> 
+            <input type="hidden" name="redirect" value="http:/https://zeropointlibra.github.io/gymmap/danke.html" /> 
+            <input type="hidden" name="missing_fields_redirect" value="http://https://zeropointlibra.github.io/gymmap/error.html" /> 
             <input type="hidden" name="required" value="realname,email,Message" /> 
             </form>
+            <br><br><br>
         </div>
     <script src="gymdata.js"></script>
     <script src="gymtracker.js"></script>
