@@ -91,7 +91,7 @@ function makeMap() {
         return center.map(sum => sum / count);
     }
 
-    const bounds = L.latLngBounds(gyms.map(gym => gym.location)).pad(0.4);
+    const bounds = L.latLngBounds(gyms.map(gym => gym.location)).pad(0.3);
     const map = L.map('map', {
         center: weightedCenter(),
         zoom: 14,
