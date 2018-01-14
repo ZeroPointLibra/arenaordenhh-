@@ -7,6 +7,7 @@
 <meta name="description" content="Arena Progress Tracker by Bert Freudenberg">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="msapplication-TileImage" content="icon.png">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="icon" href="icon.png" type="image/png">
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="stylesheet" type="text/css" href="gymtracker.css">
@@ -25,6 +26,25 @@
 <script src="https://unpkg.com/s2-geometry@1.2.9/src/s2geometry.js"
     integrity="sha384-WGDofm6Km+bZIxd/uBU2QJlwIMxX/9H5H7G9glfYtcAAR8vrm0wbzvtpIG54XhOZ"
     crossorigin=""></script>
+ <title></title>
+ <script language=javascript>
+  <!--
+  function checkSendForm() {
+    var nam = document.neu.name.value;
+    var inf = document.neu.info.value;
+    var ret = true;
+        
+    if (nam.length < 3) {
+      window.alert("Gueltigen Namen eintragen!");
+      ret = false;
+    } 
+    if (ret) {
+      window.alert("Eintrag OK.");
+    }  
+    return ret;  
+  }    
+  //-->
+ </script>
 <title>Arena Progress Tracker Hamburg</title>
 </head>
 
@@ -68,7 +88,6 @@
         <button type="button" onclick="showByActExraid()">Ex-Raid stattgefunden</button>
         <button type="button" onclick="showAsMap()">Karte</button>
         <div id="map"></div>
-        <nav id='filter-group' class='filter-group'></nav>
         <div id="list"></div>
         <div id="share">
             Die Medaillen sind nur in diesem Browser gespeichert. Um sie zu übertragen,
@@ -76,6 +95,30 @@
             <a id="share-url">Medaillen</a>
         </div>
     </div>
+    <h2>Formular ...</h2>
+    <form name='neu' method='post' enctype='text/plain' action='mailto:empfaenger@firma.de?subject=Formular' onSubmit='return checkSendForm();'>
+      <table cellspacing=2 cellpadding=2 border=0>
+        <tr>
+          <td align=right>
+            Username:
+          </td> 
+          <td>
+            <input type=text name="name" size=10 maxlength=20>
+          </td>
+        </tr>
+        <tr valign=top>
+          <td align=right>
+            <label for="BEMERK">Bemerkung:</label>
+          </td> 
+          <td>
+            <textarea id="BEMERK" name='info' cols=60 rows=4 style="background:#dbe7f3">
+          </td> 
+        </tr> 
+        <tr> 
+          <td colspan=2 align=center><input name='klick' type='submit' value=' send '><input name='' type='reset' value=' reset '></td> 
+        </tr> 
+      </table> 
+    </form> 
     <script src="gymdata.js"></script>
     <script src="gymtracker.js"></script>
 </body>
