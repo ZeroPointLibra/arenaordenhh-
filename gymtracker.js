@@ -320,7 +320,7 @@ function setLevel(i, level) {
     while (s.length <= i) s += '0';
     setLevelsString(s.substr(0, i) + level + s.substr(i + 1));
 }
-function getLevel(i) { return getLevelsString()[i] & 10; }
+function getLevel(i) { return getLevelsString()[i] & 6; }
 function incLevel(i) {
     const level = (getLevel(i) + 1) % 5;
     setLevel(i, level);
