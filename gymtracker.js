@@ -76,7 +76,6 @@ function makeList() {
 }
 
 // leaflet.js map
-var filterGroup = document.getElementById('filter-group');
 function makeMap() {
 
     // center map on higher-level gyms
@@ -127,16 +126,6 @@ function makeMap() {
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
-
-// add gym filter
-    var filterGroup = document.getElementById('filter-group');
-    gyms.features.forEach(function(feature) {
-        var symbol = feature.properties['icons'];
-        var layerID = 'poi-' + symbol;
-     
-    map.addImage('filter_icon', {width: 36, height: 48, data: icons});
-            });
-        }
     }
 
     // Show S2 level 12 cells
