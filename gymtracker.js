@@ -135,38 +135,6 @@ function makeMap() {
         var layerID = 'poi-' + symbol;
      
     map.addImage('filter_icon', {width: 36, height: 48, data: icons});
-
-
-        // Add a layer for this symbol type if it hasn't been added already.
-        if (!map.getLayer(layerID)) {
-            map.addLayer({
-                "id": layerID,
-                "type": "symbol",
-                "source": "gyms",
-                "layout": {
-                    "icon-image": "filter_icon",
-                    "icon-allow-overlap": true
-                },
-                "filter": ["==", "filter_icon", symbol]
-            });
-
-
-         // Add checkbox and label elements for the layer.
-            var input = document.createElement('input');
-            input.type = 'checkbox';
-            input.id = layerID;
-            input.checked = true;
-            filterGroup.appendChild(input);
-
-            var label = document.createElement('label');
-            label.setAttribute('for', layerID);
-            label.textContent = symbol;
-            filterGroup.appendChild(label);
-
-            // When the checkbox changes, update the visibility of the layer.
-            input.addEventListener('change', function(e) {
-                map.setLayoutProperty(layerID, 'visibility',
-                    e.target.checked ? 'visible' : 'none');
             });
         }
     }
