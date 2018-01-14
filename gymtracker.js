@@ -182,10 +182,10 @@ function deleteListItems() {
 }
 
 function updateSums() {
-    const sums = [0, 0, 0, 0];
+    const sums = [0, 0, 0, 0, 0];
     for (const gym of gyms)
         sums[gym.level]++;
-    for (let i = 0; i < 4; i++)
+    for (let i = 0; i < 5; i++)
         $(`sum${i}`).innerText = sums[i];
     $(`sum`).innerText = gyms.length;
 }
@@ -308,7 +308,7 @@ function compareExraid(a, b) {
 
 //////////////// Badge Storage ////////////////
 
-function sanitize(s) { return String(s).replace(/[^0-3]/g, '0'); }
+function sanitize(s) { return String(s).replace(/[^0-4]/g, '0'); }
 function getLevelsString() { return sanitize(storage[storageKey] || storage['gym-levels'] || ''); }
 function setLevelsString(s) { storage[storageKey] = sanitize(s); updateShare(); }
 
