@@ -321,9 +321,9 @@ function setLevel(i, level) {
     setLevelsString(s.substr(0, i) + level + s.substr(i + 1));
 }
 
-function getLevel(i) { return +getLevelsString()[i] & 5; }
+function getLevel(i) { return +getLevelsString()[i] ; }
 function incLevel(i) {
-    const level = (getLevel(i) + 1) % 5;
+    const level = ((getLevel(i) & 3) + 1) % 5;
     setLevel(i, level);
     updateSums();
     return level;
