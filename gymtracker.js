@@ -185,7 +185,7 @@ function updateSums() {
     const sums = [0, 0, 0, 0, 0];
     for (const gym of gyms)
         sums[gym.level]++;
-    for (let i = 0; i < 6; i++)
+    for (let i = 0; i < 4; i++)
         $(`sum${i}`).innerText = sums[i];
     $(`sum`).innerText = gyms.length;
 }
