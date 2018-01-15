@@ -126,13 +126,15 @@ function makeMap() {
         const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker_layer = new L.featureGroup();
+        exmarker_layer = new L.featureGroup();
         // filter criteria here
         if (gym.exraid || gym.park) {
-          marker_layer.addLayer(marker);
+          exmarker_layer.addLayer(marker);
         }
-        marker_layer.addTo(map);
+        marker_layer.addLayer(marker);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
     }
+
 
     // Show S2 level 12 cells
     // we just make a grid around the center cell
@@ -242,17 +244,17 @@ function showAsMap() {
     if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
-    marker_layer.addTo(map)
     history.replaceState(null, "Map", "#map");
 }
 
 function showAsExMap() {
+    if (map.hasLayer(marker_layer)) {
+        map.removeLayer(exmarker_layer);
+    }
     const mapContent = $('map').children.length;
-    marker_layer.addTo(map);
     if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
-    marker_exlayer.addTo(map)
     history.replaceState(null, "ExMap", "#exmap");
 }
 
