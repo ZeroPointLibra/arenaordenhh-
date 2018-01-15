@@ -241,7 +241,6 @@ function showByActExraid() {
 }
 
 function showAsMap() {
-    location.reload();
     const ex = 0;
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap(ex);
@@ -256,8 +255,8 @@ function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap(ex);
     show(['map']);
-    history.replaceState(null, "Map", "#exmap");
     refreshMap();
+    history.replaceState(null, "Map", "#exmap");
 }
 
 
