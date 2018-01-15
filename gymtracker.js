@@ -251,7 +251,7 @@ function showAsExMap() {
     marker_layer.addTo(map);
     show(['map']);
     refreshMap();
-    history.replaceState(null, "Map", "#map");
+    history.replaceState(null, "ExMap", "#exmap");
 }
 
 
