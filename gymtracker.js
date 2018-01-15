@@ -252,8 +252,6 @@ function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
     show(['exmap']);
-    map.removeLayer(marker_layer);
-    exmarker_layer.addTo(map);
     refreshMap();
     history.replaceState(null, "ExMap", "#exmap");
 }
