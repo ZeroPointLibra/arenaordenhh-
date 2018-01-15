@@ -134,6 +134,10 @@ function makeMap() {
         marker_layer.addLayer(marker);
         marker_layer.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
+        return {
+            marker_layer: marker_layer,
+            exmarker_layer: exmarker_layer,
+        };
     }
 
 
@@ -252,6 +256,7 @@ function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
     makeMap.map.removeLayer(marker_layer);
+    makeMap.exmarker_layer.addTo(map);
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#exmap");
