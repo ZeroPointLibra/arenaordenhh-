@@ -887,7 +887,7 @@ function gymData() {
 	{name: "Große Panthea", district: "Hamm", address: "Sievekingdamm", location: [53.55624,10.044102], park: "way/24040327", exraid: true},
 	{name: "Große Steinfigur", district: "Marienthal", address: "Schloßstraße", location: [53.571102,10.065646]},
 	{name: "Großer Anker", district: "Tatenberg", address: "Tatenberger Deich 146", location: [53.493725,10.084494]},
-	{name: "Großer Baum", district: "Steilshoop", address: "Weg an der Seebek", location: 53.605068,10.059312], park: "way/48975360"},
+	{name: "Großer Baum", district: "Steilshoop", address: "Weg an der Seebek", location: [53.605068,10.059312], park: "way/48975360"},
 	{name: "Großer Pferdekopf", district: "Kirchwerder", address: "Kirchwerder Hausdeich 168", location: [53.436565,10.19863]},
 	{name: "Großes Holzkreuz Schnitzerei", district: "Jorkerfelde", address: "Am Fleet Jork", location: [53.530888,9.680201]},
 	{name: "Großstadt Kachel", district: "Horn", address: "Bauerberg", location: [53.553173,10.084005]},
