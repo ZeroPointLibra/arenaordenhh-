@@ -247,8 +247,8 @@ function showAsMap() {
 
 function showAsExMap() {
     const mapContent = $('map').children.length;
-    if (!mapContent) makeMap();
     marker_layer.addTo(map);
+    if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
     history.replaceState(null, "ExMap", "#exmap");
