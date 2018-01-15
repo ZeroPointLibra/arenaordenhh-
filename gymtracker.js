@@ -253,7 +253,7 @@ function showAsExMap() {
     if (!mapContent) makeMap();
     map.removeLayer(marker_layer);
     exmarker_layer.addTo(map);
-    show(['map']);
+    show(['exmap']);
     refreshMap();
     history.replaceState(null, "ExMap", "#exmap");
 }
