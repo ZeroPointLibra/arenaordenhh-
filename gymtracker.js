@@ -126,11 +126,8 @@ function makeMap() {
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker_layer = new L.featureGroup();
         // filter criteria here
-        for (var i = 0; i < src_data.features.length; i++) {
-            var feature = src_data.features[i];
-            if (gym.exraid || gym.park) {
-              marker_layer.addLayer(marker);
-            }
+        if (gym.exraid || gym.park) {
+          marker_layer.addLayer(marker);
         }
         marker_layer.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
