@@ -99,7 +99,7 @@ function makeMap() {
         maxBounds: bounds,
         fullscreenControl: true,
         enableHighAccuracy: true,
-        trackUserLocation: true
+        trackUserLocation: true,
     });
     // Please get your own token at https://www.mapbox.com/signup/ It's free.
     const mapboxToken = 'pk.eyJ1IjoiemVyb3BvaW50bGlicmEiLCJhIjoiY2pjYWlxd2VnMDhoajMzcDZtYmgxeGloeCJ9.tjcCHRX_1aOLaeKG_9ZXBQ';
