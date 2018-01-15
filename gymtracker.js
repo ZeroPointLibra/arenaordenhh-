@@ -134,10 +134,6 @@ function makeMap() {
         marker_layer.addLayer(marker);
         marker_layer.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
-        return {
-            marker_layer: marker_layer,
-            exmarker_layer: exmarker_layer,
-        };
     }
 
 
