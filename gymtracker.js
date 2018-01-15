@@ -248,9 +248,6 @@ function showAsMap() {
 }
 
 function showAsExMap() {
-    if (map.hasLayer(marker_layer)) {
-        map.removeLayer(exmarker_layer);
-    }
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
     show(['map']);
