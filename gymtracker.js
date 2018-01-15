@@ -120,6 +120,14 @@ function makeMap() {
         shadowSize: [36, 48],
         shadowAnchor: [18, 35],
     }));
+    for (const gym of gyms) {
+        const loc = L.latLng(gym.location);
+        const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
+        const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
+        marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
+        marker.addTo(map);
+        gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
+    }
     
     
     // Show S2 level 12 cells
@@ -226,14 +234,6 @@ function showByActExraid() {
 }
 
 function showAsMap() {
-    for (const gym of gyms) {
-    const loc = L.latLng(gym.location);
-    const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
-    const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
-    marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
-    marker.addTo(map);
-    gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
-    }
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
     show(['map']);
@@ -241,7 +241,7 @@ function showAsMap() {
     history.replaceState(null, "Map", "#map");
 }
 
-function showAsExMap() {  
+function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
     makeMap.map.removeLayer(marker_layer);
