@@ -45,12 +45,13 @@ const storageKeyOld = city + ':gym-levels-old';
     makeList();
     updateShare();
     switch (location.hash) {
+        case '#name': showByName(); break; 
         case '#map': showAsMap(); break; 
         case '#district': showByDistrict(); break; 
         case '#level': showByLevel(); break; 
         case '#exraid': showByExraid(); break; 
         case '#act_exraid': showByActExraid(); break; 
-        default: showByName();
+        default: showAsExMap();
     }
 })();
 
@@ -107,6 +108,12 @@ function makeMap() {
         minZoom: 12,
         maxZoom: 17,
     }).addTo(map);
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
 
     // add gym markers
     // level 0-4 are regular gyms, 5-9 exraid gyms
@@ -160,6 +167,12 @@ function makeMap() {
         minZoom: 12,
         maxZoom: 17,
     }).addTo(map);
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
 
     // add gym markers
     // level 0-4 are regular gyms, 5-9 exraid gyms
@@ -293,6 +306,14 @@ function showByActExraid() {
 function showAsMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
+    show(['map']);
+    refreshMap();
+    history.replaceState(null, "Map", "#map");
+}
+
+function showAsExMap() {
+    const mapContent = $('map').children.length;
+    if (!mapContent) makeExMap();
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#map");
