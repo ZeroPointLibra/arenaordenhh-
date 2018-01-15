@@ -108,13 +108,7 @@ function makeMap() {
         minZoom: 12,
         maxZoom: 17,
     }).addTo(map);
-    map.addControl(new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    }));
-
+ 
     // add gym markers
     // level 0-4 are regular gyms, 5-9 exraid gyms
     const icons = [0,1,2,3,4,5,6,7,8,9].map(level => L.icon({
@@ -167,12 +161,6 @@ function makeMap() {
         minZoom: 12,
         maxZoom: 17,
     }).addTo(map);
-    map.addControl(new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    }));
 
     // add gym markers
     // level 0-4 are regular gyms, 5-9 exraid gyms
