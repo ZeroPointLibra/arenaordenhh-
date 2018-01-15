@@ -251,7 +251,7 @@ function showAsMap() {
 function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
-    show(['exmap']);
+    show(['map']);
     refreshMap();
     history.replaceState(null, "ExMap", "#exmap");
 }
