@@ -246,6 +246,7 @@ function showAsMap() {
     if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
+    history.replaceState(null, "Map", "#exmap");
 }
 
 function showAsExMap() {
@@ -253,6 +254,7 @@ function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap();
     show(['map']);
+    history.replaceState(null, "Map", "#map");
     refreshMap();
 }
 
