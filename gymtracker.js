@@ -98,13 +98,10 @@ function makeMap() {
         zoom: 14,
         maxBounds: bounds,
         fullscreenControl: true,
+        enableHighAccuracy: true,
+        trackUserLocation: true,
     });
-    map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
-    }));
+
     // Please get your own token at https://www.mapbox.com/signup/ It's free.
     const mapboxToken = 'pk.eyJ1IjoiemVyb3BvaW50bGlicmEiLCJhIjoiY2pjYWlxd2VnMDhoajMzcDZtYmgxeGloeCJ9.tjcCHRX_1aOLaeKG_9ZXBQ';
     // For testing only, you could use the OSM tile server instead:
