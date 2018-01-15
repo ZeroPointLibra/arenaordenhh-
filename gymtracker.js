@@ -98,7 +98,7 @@ function makeMap() {
         zoom: 14,
         maxBounds: bounds,
         fullscreenControl: true,
-        map.addControl(new mapboxgl.GeolocateControl()
+        GeolocateControl: true,
     });
     
                
