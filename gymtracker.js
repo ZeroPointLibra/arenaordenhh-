@@ -236,7 +236,7 @@ function showByExraid() {
 }
 
 function showByActExraid() {
-    showList(compareDistricts, 0, gym => gym.exraid);
+    showList(compareNames, 0, gym => gym.exraid);
     history.replaceState(null, "By actual Exraid", "#act_exraid");
 }
 
