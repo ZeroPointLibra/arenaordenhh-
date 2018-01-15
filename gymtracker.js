@@ -129,7 +129,7 @@ function makeMap() {
         for (var i = 0; i < src_data.features.length; i++) {
             var feature = src_data.features[i];
             if (gym.exraid || gym.park) {
-              marker_layer.addLayer(markers[i]);
+              marker_layer.addLayer(marker);
             }
         }
         marker_layer.addTo(map);
