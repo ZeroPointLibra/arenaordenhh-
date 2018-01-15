@@ -250,7 +250,6 @@ function showAsMap() {
 }
 
 function showAsExMap() {
-    location.reload();
     const ex = 1;
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap(ex);
