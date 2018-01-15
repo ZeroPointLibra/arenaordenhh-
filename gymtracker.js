@@ -242,18 +242,18 @@ function showByActExraid() {
 
 function showAsMap() {
     const ex = 0
-    makeMap(ex);
+    const mapContent = $('map').children.length;
+    if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
-    history.replaceState(null, "Map", "#map");
 }
 
 function showAsExMap() {
     const ex = 1
-    makeMap(ex);
+    const mapContent = $('map').children.length;
+    if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
-    history.replaceState(null, "Map", "#exmap");
 }
 
 
