@@ -98,7 +98,7 @@ function makeMap() {
         zoom: 14,
         maxBounds: bounds,
         fullscreenControl: true,
-        enableHighAccuracy: true
+        enableHighAccuracy: true,
         trackUserLocation: true
     });
     // Please get your own token at https://www.mapbox.com/signup/ It's free.
