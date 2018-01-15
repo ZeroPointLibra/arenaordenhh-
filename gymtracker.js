@@ -49,13 +49,13 @@ function reload() {
     makeList();
     updateShare();
     switch (location.hash) {
+        case '#name': showByName(); break; 
         case '#map': showAsMap(); break; 
         case '#exmap': showAsExMap(); break; 
         case '#district': showByDistrict(); break; 
         case '#level': showByLevel(); break; 
         case '#exraid': showByExraid(); break; 
         case '#act_exraid': showByActExraid(); break; 
-        default: showByName();
     }
 })();
 
