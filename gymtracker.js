@@ -247,7 +247,6 @@ function showAsMap() {
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#map");
-    location.reload();
 }
 
 function showAsExMap() {
@@ -257,7 +256,6 @@ function showAsExMap() {
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#exmap");
-    location.reload();
 }
 
 
