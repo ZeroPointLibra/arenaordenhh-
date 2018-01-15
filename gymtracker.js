@@ -126,14 +126,11 @@ function makeMap() {
         const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker_layer = new L.featureGroup();
-        marker_exlayer = new L.featureGroup();
         // filter criteria here
         if (gym.exraid || gym.park) {
-            marker_exlayer.addLayer(marker);
+          marker_layer.addLayer(marker);
         }
-        } else { 
-            marker_layer.addLayer(marker);
-        }
+        marker_layer.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
     }
 
