@@ -244,8 +244,8 @@ function showAsMap() {
     const ex = 0
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap(ex);
-    show(['map']);
     refreshMap();
+    show(['map']);
     history.replaceState(null, "Map", "#map");
 }
 
@@ -253,8 +253,8 @@ function showAsExMap() {
     const ex = 1
     const mapContent = $('map').children.length;
     if (!mapContent) makeMap(ex);
-    show(['map']);
     refreshMap();
+    show(['map']);
     history.replaceState(null, "Map", "#exmap");
 }
 
