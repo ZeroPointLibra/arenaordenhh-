@@ -77,7 +77,7 @@ function makeList() {
 }
 
 // leaflet.js map
-function makeMap(c) {
+function makeMap() {
 
     // center map on higher-level gyms
     function weightedCenter(weights = [1, 4, 16, 64]) {
@@ -127,13 +127,10 @@ function makeMap(c) {
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker_layer = new L.featureGroup();
         // filter criteria here
-        if (c == "ex"){
-            if (gym.exraid || gym.park) {
-              marker_layer.addLayer(marker);
-            }
-            marker_layer.addTo(map)};
-        if (c == "all"){
-            marker.addTo(map)};
+        if (gym.exraid || gym.park) {
+          marker_layer.addLayer(marker);
+        }
+        marker.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
     }
 
@@ -242,7 +239,7 @@ function showByActExraid() {
 
 function showAsMap() {
     const mapContent = $('map').children.length;
-    if (!mapContent) makeMap('all');
+    if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#map");
@@ -250,7 +247,8 @@ function showAsMap() {
 
 function showAsExMap() {
     const mapContent = $('map').children.length;
-    if (!mapContent) makeMap('ex');
+    if (!mapContent) makeMap();
+    marker_layer.addTo(map);
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#map");
