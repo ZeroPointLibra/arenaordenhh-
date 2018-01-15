@@ -111,8 +111,6 @@ function makeMap() {
         maxZoom: 17,
     }).addTo(map);
 
-
-
     // add gym markers
     // level 0-4 are regular gyms, 5-9 exraid gyms
     const icons = [0,1,2,3,4,5,6,7,8,9].map(level => L.icon({
@@ -134,6 +132,62 @@ function makeMap() {
     }
 
         
+    function makeExMap() {
+
+    // center map on higher-level gyms
+    function weightedCenter(weights = [1, 4, 16, 64]) {
+        let center = [0, 0],
+            count = 0;
+        for (const gym of gyms) {
+            const weight = weights[gym.level];
+            center[0] += weight * gym.location[0];
+            center[1] += weight * gym.location[1];
+            count += weight;
+        }
+        return center.exmap(sum => sum / count);
+    }
+
+    const bounds = L.latLngBounds(gyms.exmap(gym => gym.location)).pad(0.3);
+    const exmap = L.exmap('exmap', {
+        center: weightedCenter(),
+        zoom: 14,
+        maxBounds: bounds,
+        fullscreenControl: true,
+    });
+    // Please get your own token at https://www.mapbox.com/signup/ It's free.
+    const mapboxToken = 'pk.eyJ1IjoiemVyb3BvaW50bGlicmEiLCJhIjoiY2pjYWlxd2VnMDhoajMzcDZtYmgxeGloeCJ9.tjcCHRX_1aOLaeKG_9ZXBQ';
+    // For testing only, you could use the OSM tile server instead:
+    // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    L.tileLayer(`https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${mapboxToken}`, {
+        attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> | © <a href="http://mapbox.com">Mapbox</a>',
+        minZoom: 12,
+        maxZoom: 17,
+    }).addTo(exmap);
+
+    // add gym markers
+    // level 0-4 are regular gyms, 5-9 exraid gyms
+    const icons = [0,1,2,3,4,5,6,7,8,9].exmap(level => L.icon({
+        iconUrl: `gym${level}.png`,
+        iconSize: [36, 48],
+        iconAnchor: [18, 42],
+        popupAnchor: [18, 6],
+        shadowUrl: 'gym_.png',
+        shadowSize: [36, 48],
+        shadowAnchor: [18, 35],
+    }));
+    for (const gym of gyms) {
+        const loc = L.latLng(gym.location);
+        const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
+        const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
+        marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
+        marker_layer = new L.featureGroup();
+        // filter criteria here
+        if (gym.exraid || gym.park) {
+          marker_layer.addLayer(marker);
+        }
+        marker_layer.addTo(exmap);
+        gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
+    }
     
 
     // Show S2 level 12 cells
@@ -157,11 +211,14 @@ function makeMap() {
         for (let y = 1; y < grid[0].length; y++) {
             L.polyline([grid[x-1][y], grid[x-1][y-1], grid[x][y-1]],
                 {color: 'blue', opacity: 0.3, weight: 2}).addTo(map);
+            L.polyline([grid[x-1][y], grid[x-1][y-1], grid[x][y-1]],
+                {color: 'blue', opacity: 0.3, weight: 2}).addTo(exmap);
         }
     }
 
     // used in showAsMap()
     refreshMap = _ => L.Util.requestAnimFrame(map.invalidateSize, map, !1, map._container);
+    refreshExMap = _ => L.Util.requestAnimFrame(exmap.invalidateSize, exmap, !1, exmap._container);
 }
 
 // add <a> jump targets and nav bar
@@ -247,16 +304,12 @@ function showAsMap() {
     history.replaceState(null, "Map", "#map");
 }
 
-function showAsMap() {
-    if (gym.exraid || gym.park) {
-        marker_layer.addLayer(marker);
-    }
-    marker_layer.addTo(exmap);
+function showAsExMap() {
     const mapContent = $('map').children.length;
     if (!mapContent) makeExMap();
     show(['map']);
-    refreshMap();
-    history.replaceState(null, "Map", "#map");
+    refreshExMap();
+    history.replaceState(null, "ExMap", "#exmap");
 }
 
 
