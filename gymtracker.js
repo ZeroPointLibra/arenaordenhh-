@@ -126,11 +126,14 @@ function makeMap() {
         const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         marker_layer = new L.featureGroup();
+        marker_exlayer = new L.featureGroup();
         // filter criteria here
         if (gym.exraid || gym.park) {
-          marker_layer.addLayer(marker);
+            marker_exlayer.addLayer(marker);
         }
-        marker.addTo(map);
+        } else { 
+            marker_layer.addLayer(marker);
+        }
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
     }
 
@@ -242,6 +245,7 @@ function showAsMap() {
     if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
+    marker_layer.addTo(map)
     history.replaceState(null, "Map", "#map");
 }
 
@@ -251,6 +255,7 @@ function showAsExMap() {
     if (!mapContent) makeMap();
     show(['map']);
     refreshMap();
+    marker_exlayer.addTo(map)
     history.replaceState(null, "ExMap", "#exmap");
 }
 
