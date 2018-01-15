@@ -129,7 +129,7 @@ function makeMap(ex) {
         if (ex==1){
             if (gym.exraid || gym.park){
                 marker.addTo(map);
-             }
+                }
         } else {
             marker.addTo(map);
             }
