@@ -98,8 +98,9 @@ function makeMap() {
         zoom: 14,
         maxBounds: bounds,
         fullscreenControl: true,
+        map.addControl(new mapboxgl.GeolocateControl()
     });
-    map.addControl(new mapboxgl.GeolocateControl()
+    
                
     // Please get your own token at https://www.mapbox.com/signup/ It's free.
     const mapboxToken = 'pk.eyJ1IjoiemVyb3BvaW50bGlicmEiLCJhIjoiY2pjYWlxd2VnMDhoajMzcDZtYmgxeGloeCJ9.tjcCHRX_1aOLaeKG_9ZXBQ';
