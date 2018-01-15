@@ -130,8 +130,6 @@ function makeMap() {
         if (gym.exraid || gym.park) {
           marker_layer.addLayer(marker);
         }
-        marker.addTo(map);
-        gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
     }
 
     // Show S2 level 12 cells
