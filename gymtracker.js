@@ -125,18 +125,11 @@ function makeMap() {
         const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
         const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
-        marker_layer = new L.featureGroup();
-        exmarker_layer = new L.featureGroup();
-        // filter criteria here
-        if (gym.exraid || gym.park) {
-          exmarker_layer.addLayer(marker);
-        }
-        marker_layer.addLayer(marker);
-        marker_layer.addTo(map);
+        marker.addTo(map);
         gym.setMarker = lv => marker.setIcon(icons[lv]);    // used in makeList()
     }
-
-
+    
+    
     // Show S2 level 12 cells
     // we just make a grid around the center cell
     // count is based on 2000 m average level 12 cell size ... better use a S2RegionCoverer
