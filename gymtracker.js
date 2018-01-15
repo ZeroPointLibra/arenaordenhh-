@@ -126,7 +126,7 @@ function makeMap(ex) {
         const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
         const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
-        if (ex="1"){
+        if (ex==1){
             if (gym.exraid || gym.park){
                 marker.addTo(map);
              }
