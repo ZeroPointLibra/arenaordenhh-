@@ -102,7 +102,7 @@ function makeMap() {
     
     let geolocate = new mapboxgl.GeolocateControl({
         positionOptions: {
-            enableHighAccuracy: true
+            enableHighAccuracy: true,
         }
     });
 
