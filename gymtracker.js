@@ -134,7 +134,7 @@ function makeMap() {
     }
 
         
-
+    
 
     // Show S2 level 12 cells
     // we just make a grid around the center cell
@@ -247,7 +247,11 @@ function showAsMap() {
     history.replaceState(null, "Map", "#map");
 }
 
-function showAsExMap() {
+function showAsMap() {
+    if (gym.exraid || gym.park) {
+        marker_layer.addLayer(marker);
+    }
+    marker_layer.addTo(exmap);
     const mapContent = $('map').children.length;
     if (!mapContent) makeExMap();
     show(['map']);
