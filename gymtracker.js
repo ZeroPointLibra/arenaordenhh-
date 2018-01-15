@@ -32,6 +32,10 @@ const {gyms, city} = getGyms();
 const storageKey = city + ':gym-levels';
 const storageKeyOld = city + ':gym-levels-old';
 
+function reload() {
+    location.reload();
+    };
+
 (function start() {
     updateSums();
     if (location.search) {
