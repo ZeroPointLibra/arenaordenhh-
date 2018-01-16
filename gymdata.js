@@ -22,7 +22,7 @@ Entries for each gym:
 
 function gymData() {
 	return {
-	city: "DE-MD", // country-city (used in localStorage key to allow tracking multiple cities)
+	city: "DE-HH", // country-city (used in localStorage key to allow tracking multiple cities)
 	gyms: [
 	{name: "100 Jahre Bahnhof Hasloh", district: "Hasloh", address: "Bahnhofstraße 51", location: [53.693085,9.920132]},
 	{name: "100 Jahre Genossenschaft - Gedenkstein", district: "Langenhorn", address: "Theodor-Fahr-Straße 2b", location: [53.666981,10.010437]},
