@@ -1719,7 +1719,7 @@ function gymData() {
 	{name: "Robin Hout Im Großstadtjungel", district: "St. Pauli", address: "Beim Grünen Jäger 8", location: [53.557098,9.962963]},
 	{name: "Roboter", district: "Norderstedt", address: "Rugenbarg 69", location: [53.666965,9.989485]},
 	{name: "Rohrportal", district: "Neu Wulmstorf", address: "Talweg Imbiss Freibad Neu Wulmstorf", location: [53.459427,9.807134]},
-	{name: "Rollschuhbahn Planten un Blomen", district: "Neustadt", address: "Holstenwall 30", location: [53.553406,9.97553], park: "way/19412399"},
+	{name: "Rollschuhbahn Planten un Blomen", district: "Neustadt", address: "Holstenwall 30", location: [53.553406,9.97553], park: "way/19412399", exraid: true},
 	{name: "Rosskastanienminiermotte", district: "Ohlsdorf", address: "Mittelallee", location: [53.624664,10.066631]},
 	{name: "Rostige Blume", district: "Osdorf", address: "Wüstenwanderweg", location: [53.562634,9.862069], park: "way/32389126"},
 	{name: "Rostiges Windrad", district: "Finkenwerder", address: "Rüschweg", location: [53.54221,9.857045]},
