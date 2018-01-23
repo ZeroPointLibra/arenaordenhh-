@@ -290,7 +290,7 @@ function gymData() {
 	{name: "Broken spring with duckface", district: "Hamm", address: "Osterbrook 11c", location: [53.549923,10.057535]},
 	{name: "Bronzefigur von Jozek Nowak", district: "St. Georg", address: "Schmilinskystraße 78", location: [53.557644,10.014619]},
 	{name: "Bronzepferd Landgraf", district: "Elmshorn", address: "Westerstraße 95", location: [53.744816,9.644727]},
-	{name: "Bronzeplastik auf dem Altonaer", district: "Altona-Altstadt", address: "Elbberg Maritim", location: [53.54541,9.935116], park: "way/138974313"},
+	{name: "Bronzeplastik auf dem Altonaer", district: "Altona-Altstadt", address: "Elbberg Maritim", location: [53.54541,9.935116], park: "way/138974313", exraid: true},
 	{name: "Brunnen Am Heimgarten", district: "Ahrensburg", address: "Heimgartenweg", location: [53.679493,10.219003]},
 	{name: "Brunnen Dassendorf", district: "Dassendorf", address: "Am Wendel 2", location: [53.493645,10.360577]},
 	{name: "Brunnen Eimsbusch", district: "Eimsbüttel", address: "Glücksburger Platz", location: [53.569592,9.949469]},
