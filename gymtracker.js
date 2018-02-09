@@ -128,7 +128,7 @@ function makeMap(ex) {
     for (const gym of gyms) {
         const loc = L.latLng(gym.location);
         const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
-        const id = S2.latLngToKey(loc.lat, loc.lng, 12).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
+        const id = S2.latLngToKey(loc.lat, loc.lng, 13).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         if (ex==1){
             if (gym.exraid || gym.park){
@@ -141,11 +141,11 @@ function makeMap(ex) {
     }
     
     
-    // Show S2 level 12 cells
+    // Show S2 level 13 cells
     // we just make a grid around the center cell
-    // count is based on 2000 m average level 12 cell size ... better use a S2RegionCoverer
-    const count = L.CRS.Earth.distance(bounds.getSouthWest(), bounds.getNorthEast()) / 2000 |0;
-    const cell = S2.S2Cell.FromLatLng(bounds.getCenter(), 12);
+    // count is based on 500 m average level 12 cell size ... better use a S2RegionCoverer
+    const count = L.CRS.Earth.distance(bounds.getSouthWest(), bounds.getNorthEast()) / 500 |0;
+    const cell = S2.S2Cell.FromLatLng(bounds.getCenter(), 13);
     const grid = [];
     for (let j = -count; j < count; j++) {
         const row = [];
