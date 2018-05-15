@@ -141,41 +141,6 @@ function makeMap(ex) {
     }
     
     
-    // Show S2 cells  
-    function showS2Cells(level, style, showNames) {
-        // we just make a grid around the center cell
-        // count is a guess based on S2 cell size ... better use a S2RegionCoverer
-        const size = L.CRS.Earth.distance(bounds.getSouthWest(), bounds.getNorthEast()) / 10000 + 1|0;
-        const count = 2 ** level * size >> 10;
-
-        function addPoly(cell) {
-            const shape = showNames ? "polygon" : "polyline";
-            const vertices = cell.getCornerLatLngs();
-            if (shape === "polyline") vertices.push(vertices[0]);
-            const poly = L[shape](vertices,
-                Object.assign({color: 'blue', opacity: 0.3, weight: 2, fillOpacity: 0.0}, style));
-            if (showNames && cells) poly.bindTooltip(cellName(cell));
-            poly.addTo(map);
-        }
-
-        // add cells spiraling outward
-        let cell = S2.S2Cell.FromLatLng(bounds.getCenter(), level);
-        let steps = 1;
-        let direction = 0;
-        do {
-            for (let i = 0; i < 2; i++) { 
-                for (let i = 0; i < steps; i++) {
-                    addPoly(cell);
-                    cell = cell.getNeighbors()[direction % 4];
-                }
-                direction++;
-            }
-            steps++;
-        } while (steps < count);
-}
-    
-    showS2Cells(13, {color: '#999'});
-    
     // used in showAsMap()
     refreshMap = _ => L.Util.requestAnimFrame(map.invalidateSize, map, !1, map._container);
 }
