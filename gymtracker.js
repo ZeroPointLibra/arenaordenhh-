@@ -293,6 +293,7 @@ function setLevel(i, level) {
     let s = getLevelsString();
     while (s.length <= i) s += '0';
     setLevelsString(s.substr(0, i) + level + s.substr(i + 1));
+    updateSums();
 }
 function getLevel(i) { return getLevelsString()[i] & 4; }
 function incLevel(i) {
