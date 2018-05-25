@@ -51,11 +51,8 @@ function reload() {
     switch (location.hash) {
         case '#name': showByName(); break; 
         case '#map': showAsMap(); break; 
-        case '#exmap': showAsExMap(); break; 
         case '#district': showByDistrict(); break; 
         case '#level': showByLevel(); break; 
-        case '#exraid': showByExraid(); break; 
-        case '#act_exraid': showByActExraid(); break; 
     }
 })();
 
@@ -65,7 +62,7 @@ function makeList() {
         gym.div = document.createElement('div');
         gym.div.className = gym.exraid ? 'item exraid' : 'item';
         gym.div.innerHTML = `
-            <img src="gym${gym.levelEx}.png" class="badge" width="36" height="48">
+            <img src="gym${gym.level}.png" class="badge" width="36" height="48">
             <div><b>${gym.name}</b>
                 ${typeof gym.park == 'string' ? '(<a href="http://www.openstreetmap.org/' + gym.park + '">EX</a>)' : ''}<br>
                 ${gym.district ? gym.district+',' : ''}
@@ -74,8 +71,8 @@ function makeList() {
         const badge = byClass(gym.div, 'badge')[0];
         badge.onclick = () => {
             incLevel(gym.id);
-            badge.src = `gym${gym.levelEx}.png`;
-            if (gym.setMarker) gym.setMarker(gym.levelEx);   // update map marker
+            badge.src = `gym${gym.level}.png`;
+            if (gym.setMarker) gym.setMarker(gym.level);   // update map marker
         };
     }
 }
@@ -110,13 +107,13 @@ function makeMap(ex) {
     // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     L.tileLayer(`https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${mapboxToken}`, {
         attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> | © <a href="http://mapbox.com">Mapbox</a>',
-        minZoom: 12,
+        minZoom: 10,
         maxZoom: 17,
     }).addTo(map);
 
     // add gym markers
     // level 0-4 are regular gyms, 5-9 exraid gyms
-    const icons = [0,1,2,3,4,5,6,7,8,9].map(level => L.icon({
+    const icons = [0,1,2,3,4].map(level => L.icon({
         iconUrl: `gym${level}.png`,
         iconSize: [36, 48],
         iconAnchor: [18, 42],
@@ -127,7 +124,7 @@ function makeMap(ex) {
     }));
     for (const gym of gyms) {
         const loc = L.latLng(gym.location);
-        const marker = L.marker(loc, {icon: icons[gym.levelEx], riseOnHover: true});
+        const marker = L.marker(loc, {icon: icons[gym.level], riseOnHover: true});
         const id = S2.latLngToKey(loc.lat, loc.lng, 13).slice(-2).split('').reduce((s, n) => +s * 4 + +n);
         marker.bindTooltip(`${String.fromCodePoint(0x24B6 + id)} ${gym.name}`);
         if (ex==1){
@@ -210,15 +207,6 @@ function showByLevel(level) {
     else history.replaceState(null, "By Level", "#level");
 }
 
-function showByExraid() {
-    showList(compareDistricts, 0, gym => gym.exraid || gym.park);
-    history.replaceState(null, "By Exraid", "#exraid");
-}
-
-function showByActExraid() {
-    showList(compareNames, 0, gym => gym.exraid);
-    history.replaceState(null, "By actual Exraid", "#act_exraid");
-}
 
 function showAsMap() {
     const ex = 0;
@@ -227,15 +215,6 @@ function showAsMap() {
     show(['map']);
     refreshMap();
     history.replaceState(null, "Map", "#map");
-}
-
-function showAsExMap() {
-    const ex = 1;
-    const mapContent = $('map').children.length;
-    if (!mapContent) makeMap(ex);
-    show(['map']);
-    refreshMap();
-    history.replaceState(null, "Map", "#exmap");
 }
 
 
@@ -339,7 +318,6 @@ function getGyms() {
         gyms: gyms.map((gym, index) => Object.assign({
                 id: index,          // gym's index in storage string
                 get level() { return getLevel(index) },
-                get levelEx() { return getLevel(index) + ((gym.exraid || gym.park) ? 5 : 0)},
             }, gym))
             .filter(({deleted}) => !deleted),
     };
