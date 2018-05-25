@@ -293,12 +293,13 @@ function setLevel(i, level) {
     let s = getLevelsString();
     while (s.length <= i) s += '0';
     setLevelsString(s.substr(0, i) + level + s.substr(i + 1));
-    updateSums();
 }
-function getLevel(i) { return getLevelsString()[i] & 4; }
+
+function getLevel(i) { return +getLevelsString()[i]; }
 function incLevel(i) {
     const level = (getLevel(i) + 1) % 5;
     setLevel(i, level);
+    updateSums();
     return level;
 }
 
