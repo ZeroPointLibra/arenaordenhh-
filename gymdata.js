@@ -2303,5 +2303,6 @@ function gymData() {
 	{name: "Öjendorfer Schachfelder", district: "Billstedt", address: "Grootmoorredder Minigolf-Anlage Öjendorf", location: [53.552185,10.135262], park: "way/107162022"},
 	{name: "Überwasserrutsche", district: "Wilhelmsburg", address: "Stübenhofer Weg", location: [53.482655,10.01259], park: "way/69658935"},
 	{name: "„Langer Otto“ Aussichtsturm", district: "Hamfelde", address: "Hasenberg Hahnheider Turm", location: [53.614868,10.458851], park: "way/52944879"},
+	{name: "Vor dem Holstentor Church", district: "St. Pauli", address: "Tschaikowskyplatz 1", location: [53.557589,9.976328]},
 	]};
 }
